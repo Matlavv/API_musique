@@ -31,7 +31,7 @@ exports.createAVotes = async (req, res) => {
 exports.deleteAVotes = async (req, res) => {
     
     try {
-        await Votes.findByIdAndDelete(req.params.id_votes );
+        await Votes.findByIdAndDelete(req.params.votesId );
         res.status(200);        
         res.json({message: 'Votes deleted'});
     } catch (error) {
@@ -43,7 +43,7 @@ exports.deleteAVotes = async (req, res) => {
 
 exports.updateAVotes = async (req, res) => {
     try {
-        const votes = await Votes.findByIdAndUpdate(req.params.id_votes, req.body, {new: true});
+        const votes = await Votes.findByIdAndUpdate(req.params.votesId, req.body, {new: true});
         res.status(201);
         res.json(votes);
     } catch (error) {
