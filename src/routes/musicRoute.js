@@ -6,12 +6,9 @@ const musicController = require('../controllers/musicController');
 router
     .route('/')
     .get(musicController.listAllMusic)
-     .post(musicController.createAMusic);
-
-// router
-//     .route('/music/')
-//     .delete(musicController.deleteAMusic)
-//     .get(musicController.getAMusic)
-//     .put(musicController.updateAMusic);
-
+    .post(musicController.createAMusic)
+    .get(musicController.getAMusic)
+    .delete(musicController.deleteAMusic)
+    .put(musicController.updateAMusic);
+    
 module.exports = router;

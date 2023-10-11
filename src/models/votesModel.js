@@ -9,6 +9,7 @@ let votesSchema = new Schema ({
         return value <= 5;
       },
       message: 'La valeur doit être inférieure ou égale à 5',
+      required: true
     }
     },
     published_at: {
