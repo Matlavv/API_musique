@@ -3,10 +3,10 @@ const Votes = require('../models/votesModel');
 
 exports.calculateAverageVote = async (req, res) => {
 
-    const musicId = req.params.musicId;
+    const musicId = req.params.id_music;
 
     try {
-        const votes = await Votes.find({ musicId: musicId });
+        const votes = await Votes.find({ id_music: musicId });
         if (votes.length === 0) {
             res.status(404).json({ message: 'Aucun vote trouvé pour cette musique' });
             return;
