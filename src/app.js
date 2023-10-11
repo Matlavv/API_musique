@@ -9,11 +9,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/apinode')
 app.use(express.urlencoded());
 app.use(express.json());
 
-const postRoute = require('./routes/musicRoute');
+const musicRoute = require('./routes/musicRoute');
 app.use('/music', musicRoute)
 
-const comsRoute = require('./routes/votesRoute');
-app.use('/votes', voteRoute)
+// const votesRoute = require('./routes/votesRoute');
+// app.use('/', votesRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
