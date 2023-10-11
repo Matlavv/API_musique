@@ -2,22 +2,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let votesSchema = new Schema ({
-    grade : {
+  musicId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Music',
+    required: true,
+  },
+  grade : {
     type: Number,
     validate: {
       validator: function (value) {
         return value <= 5;
       },
       message: 'La valeur doit être inférieure ou égale à 5',
+      required: true
     }
     },
-    published_at: {
+  published_at: {
         type: Date,
         default: Date.now
-    },
-    result: {
+  },
+  result: {
         type: Number
-    }
+  }
 })
 
 module.exports = mongoose.model('Votes', votesSchema);

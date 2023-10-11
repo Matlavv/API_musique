@@ -17,7 +17,11 @@ let musicSchema = new Schema ({
     published_at: {
         type: Date,
         default: Date.now
+    },
+    votes_number: {
+        type: Number,
     }
+    
 })
 
 module.exports = mongoose.model('Music', musicSchema);

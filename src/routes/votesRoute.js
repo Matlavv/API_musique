@@ -6,10 +6,7 @@ const votesController = require('../controllers/votesController');
 router
     .route('/votes/')
     .get(votesController.listAllVotes)
-    .post(votesController.createAVotes);
-
-router
-    .route('/votes/')
+    .post(votesController.createAVotes)
     .delete(votesController.deleteAVotes)
     .get(votesController.getAVotes)
     .put(votesController.updateAVotes);
